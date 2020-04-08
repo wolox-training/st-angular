@@ -1,29 +1,29 @@
+.base-span {
+  margin-left: 10px;
+  color: $text-grey;
+  font-size: 20px;
+}
+
+.bold-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.bold-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 24px;
+}
+
 .top-item {
   display: flex;
-  flex-direction: row;
   margin: 20px 10px;
-  h1 {
-    font-size: 32px;
-    font-weight: bold;
-  }
-  p {
-    margin-left: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #828282;
-  }
-  
 }
+
 .item {
   display: flex;
-  margin: 10px 10px;
-  h3 {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  p {
-    margin-left: 20px;
-    font-size: 20px;
-    color: #828282;
-  }
+  margin: 10px;
 }
