@@ -46,7 +46,6 @@
 }
 
 .border-line {
-  border-bottom: solid;
-  border-color: $earls-green;
+  border-bottom: solid $earls-green;
   padding-bottom: 20px;
 } 
