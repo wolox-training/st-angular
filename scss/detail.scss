@@ -33,7 +33,8 @@
 }
 
 .container-item {
-  margin: 25px
+  margin: 25px;
+  position: relative;
 }
 
 .container-data {
@@ -48,4 +49,12 @@
 .border-line {
   border-bottom: solid $earls-green;
   padding-bottom: 20px;
-} 
+}
+
+.badge {
+  height: 118.57px;
+  transform: rotate(15deg);
+  position: absolute;
+  top: -15px;
+  right: -20px;
+}
