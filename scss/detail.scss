@@ -25,12 +25,19 @@
 }
 
 .container {
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 $black-lighter-5;
   display: flex;
-  justify-content: center;
+  height: 416px;
+  width: 900px;
 }
 
 .container-item {
   margin: 24px 26px
+}
+
+.container-data {
+  flex-grow: 2;
 }
 
 .book-cover {
@@ -38,4 +45,7 @@
   width: 261px;
 }
 
-
+.border-line {
+  border-bottom: solid;
+  border-color: $earls-green;
+} 
