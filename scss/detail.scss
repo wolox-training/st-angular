@@ -34,7 +34,6 @@
 
 .container-item {
   margin: 25px;
-  position: relative;
 }
 
 .container-data {
@@ -52,9 +51,18 @@
 }
 
 .badge {
-  height: 118.57px;
+  position: relative;
+}
+
+.badge::after {
+  background-image: url('resources/badge.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 275px;
+  content: '';
+  height: 100px;
+  left: 210px;
   position: absolute;
-  right: -20px;
-  top: -15px;
   transform: rotate(15deg);
+  width: 100px;
 }
