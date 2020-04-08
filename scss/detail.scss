@@ -7,7 +7,7 @@
 .bold-title {
   font-size: 32px;
   font-weight: bold;
-  margin: 0 10px 20px;
+  width: 100%;
 }
 
 .bold-text {
@@ -28,12 +28,12 @@
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-lighter-5;
   display: flex;
-  height: 416px;
+  height: 415px;
   width: 900px;
 }
 
 .container-item {
-  margin: 24px 26px
+  margin: 25px
 }
 
 .container-data {
@@ -42,10 +42,11 @@
 
 .book-cover {
   height: 368px;
-  width: 261px;
+  width: 260px;
 }
 
 .border-line {
   border-bottom: solid;
   border-color: $earls-green;
+  padding-bottom: 20px;
 } 
