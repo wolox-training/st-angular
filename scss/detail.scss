@@ -7,7 +7,7 @@
 .bold-title {
   font-size: 32px;
   font-weight: bold;
-  margin: 20px 10px;
+  margin: 0px 10px 20px;
 }
 
 .bold-text {
@@ -22,3 +22,19 @@
 .item {
   margin: 30px 10px;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container > div {
+  margin: 24px 26px
+}
+
+.book-cover {
+  height: 368px;
+  width: 261px;
+}
+
+
