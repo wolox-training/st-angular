@@ -55,13 +55,11 @@
 }
 
 .badge::after {
-  background-image: url('resources/badge.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  bottom: 275px;
+  background: center / contain no-repeat url('resources/badge.png');
+  bottom: 280px;
   content: '';
   height: 100px;
-  left: 210px;
+  left: 195px;
   position: absolute;
   transform: rotate(15deg);
   width: 100px;
