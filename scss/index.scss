@@ -1,0 +1,31 @@
+.list-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 1000px;
+}
+
+.list-item {
+  box-shadow: 4px 4px 10px 0 $black-lighter-5;
+  height: 300px;
+  margin-top: 35px;
+  margin-left: 35px;
+  padding: 25px;
+  width: 200px;
+}
+
+.item-book-cover {
+  height: 200px;
+  width: 150px;
+}
+
+.item-bold-text {
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.item-text {
+  color: $gray;
+  padding-top: 5px;
+}
