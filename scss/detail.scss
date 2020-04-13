@@ -33,7 +33,7 @@
 }
 
 .container-item {
-  margin: 25px
+  margin: 25px;
 }
 
 .container-data {
@@ -48,4 +48,20 @@
 .border-line {
   border-bottom: solid $earls-green;
   padding-bottom: 20px;
-} 
+}
+
+.badge {
+  position: relative;
+
+  &::after {
+    background: center / contain no-repeat url('resources/badge.png');
+    bottom: 280px;
+    content: '';
+    height: 100px;
+    left: 195px;
+    position: absolute;
+    transform: rotate(15deg);
+    width: 100px;
+  }
+}
+
