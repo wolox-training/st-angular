@@ -49,7 +49,7 @@ body::-webkit-scrollbar-thumb {
 
 .navbar {
   background-color: $white; 
-  box-shadow: 4px 4px 10px 0 $black-lighter-5;
+  box-shadow: 0 4px 10px 0 $black-lighter-5;
   height: 70px;
   position: fixed;
   width: -webkit-fill-available;
@@ -64,7 +64,6 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  height: 100%;
 }
 
 .logo {
