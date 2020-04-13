@@ -24,13 +24,32 @@
   margin: 30px 10px;
 }
 
+.detail {
+  margin: auto;
+  padding: 80px;
+  width: fit-content;
+}
+
 .container {
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-lighter-5;
   display: flex;
   height: 415px;
+  margin-top: 50px;
   width: 900px;
 }
+
+.back-arrow {
+  display: contents;
+  font-size: 20px;
+  &::before {
+    content: url('resources/back-arrow-20.png');
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 15px;
+  }
+} 
 
 .container-item {
   margin: 25px;
