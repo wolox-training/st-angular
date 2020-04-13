@@ -1,0 +1,57 @@
+.login-container {
+  margin: 100px auto;
+  width: fit-content;
+}
+
+.login-form {
+  background: $wild-sand;
+  border-top: solid 5px $cerulean;
+  height: 400px;
+  padding: 25px;
+  text-align: center;
+  width: 300px;
+}
+
+.form-logo {
+  height: 70px;
+  width: 210px;
+}
+
+.form-content {
+  text-align: justify;
+}
+
+.form-input {
+  background: $white;
+  border-radius: 5px;
+  height: 35px;
+  margin: 10px 0;
+  width: -webkit-fill-available;
+}
+
+.login-button {
+  background-color: $earls-green;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+  height: 35px;
+  margin: 10px 0;
+  width: -webkit-fill-available;
+}
+
+.signup-button {
+  background: $wild-sand;
+  border: 2px solid $earls-green;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: $earls-green;
+  cursor: pointer;
+  height: 35px;
+  margin: 15px 0;
+  width: -webkit-fill-available;;
+}
+
+.border-line-silver {
+  border-bottom: solid 2px $silver-chalice;
+  padding-bottom: 5px;
+}
