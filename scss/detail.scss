@@ -85,3 +85,68 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .detail {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .back-arrow {
+    align-self: center;
+    display: block;
+    margin-top: 20px;
+  }
+
+  .container {
+    align-items: center;
+    flex-direction: column;
+    height: 570px;
+    margin: 0;
+    width: 340px;
+  }
+
+  .container-item {
+    margin: 15px;
+  }
+
+  .book-cover {
+    height: 300px;
+    width: 210px;
+  }
+
+  .badge {
+    margin-top: 35px;
+  
+    &::after {
+      bottom: 240px;
+      height: 80px;
+      left: 165px;
+      width: 65px;
+    }
+  }
+
+  .bold-title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .bold-text {
+    font-size: 14px;
+  }
+
+  .base-span {
+    font-size: 14px;
+  }
+
+  .item {
+    margin: 20px 10px;
+  }
+
+  .border-line {
+    padding-bottom: 10px;
+  }
+}
+
