@@ -18,6 +18,11 @@
   width: 100%;
 }
 
+.list-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+}
+
 .item-book-cover {
   background: center / cover no-repeat url('resources/book-cover.png');
   height: 200px;
