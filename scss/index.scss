@@ -4,18 +4,18 @@
   justify-content: center;
   margin: auto;
   max-width: 1000PX;
+  padding: 85px 10px;
   width: 100%;
-  padding: 75px 200px;
 }
 
 .list-item {
   box-shadow: 4px 4px 10px 0 $black-lighter-5;
-  flex: 1 0 20%;
+  flex: 1 0 auto;
   height: 300px;
-  margin-left: 35px;
-  margin-top: 35px;
+  margin: 15px 15px;
   max-width: 200px;
   padding: 25px;
+  width: 100%;
 }
 
 .item-book-cover {
@@ -49,25 +49,30 @@ body::-webkit-scrollbar-thumb {
 
 .navbar {
   background-color: $white; 
+  border-top: solid 5px $cerulean;
   box-shadow: 0 4px 10px 0 $black-lighter-5;
   height: 70px;
   position: fixed;
   width: -webkit-fill-available;
-  border-top: solid 5px $cerulean;
 }
 
 .navbar-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
+  background: center / cover no-repeat url("resources/logo-wolox.png");
   height: 70px;
   width: 210px;
-  background: center / cover no-repeat url("resources/logo-wolox.png");
+}
+
+.logout {
+  font-size: 18px;
+  line-height: 20px;
 }
