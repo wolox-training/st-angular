@@ -42,12 +42,13 @@
 .back-arrow {
   display: contents;
   font-size: 20px;
+
   &::before {
     content: url('resources/back-arrow-20.png');
     height: 20px;
-    width: 20px;
-    vertical-align: middle;
     margin-right: 15px;
+    vertical-align: middle;
+    width: 20px;
   }
 } 
 
