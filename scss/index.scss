@@ -2,22 +2,24 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  width: 1000px;
+  margin: auto;
+  max-width: 1000PX;
+  width: 100%;
 }
 
 .list-item {
   box-shadow: 4px 4px 10px 0 $black-lighter-5;
   height: 300px;
-  margin-top: 35px;
   margin-left: 35px;
+  margin-top: 35px;
   padding: 25px;
   width: 200px;
 }
 
 .item-book-cover {
+  background: center / cover no-repeat url('resources/book-cover.png');
   height: 200px;
   width: 150px;
-  background: center / cover no-repeat url('resources/book-cover.png');
 }
 
 .item-bold-text {
