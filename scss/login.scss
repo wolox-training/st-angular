@@ -4,7 +4,7 @@
 }
 
 .login-form {
-  background: $wild-sand;
+  background-color: $wild-sand;
   border-top: solid 5px $cerulean;
   height: 400px;
   padding: 25px;
@@ -17,12 +17,13 @@
   width: 210px;
 }
 
-.form-content {
-  text-align: justify;
+.label-input {
+  text-align: left;
+  width: -webkit-fill-available;
 }
 
 .form-input {
-  background: $white;
+  background-color: $white;
   border-radius: 5px;
   height: 35px;
   margin: 10px 0;
@@ -36,22 +37,30 @@
   cursor: pointer;
   height: 35px;
   margin: 10px 0;
+  position: relative;
+  text-align: center;
   width: -webkit-fill-available;
+
+  &::after {
+    background-color: $silver-chalice;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 50px;
+    width: 250px;
+  }
 }
 
 .signup-button {
-  background: $wild-sand;
+  background-color: $wild-sand;
   border: 2px solid $earls-green;
   border-radius: 5px;
   box-sizing: border-box;
   color: $earls-green;
   cursor: pointer;
   height: 35px;
-  margin: 15px 0;
+  margin: 20px 0;
+  text-align: center;
   width: -webkit-fill-available;;
-}
-
-.border-line-silver {
-  border-bottom: solid 2px $silver-chalice;
-  padding-bottom: 5px;
 }
