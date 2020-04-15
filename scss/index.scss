@@ -12,7 +12,7 @@
   box-shadow: 4px 4px 10px 0 $black-lighter-5;
   flex: 1 0 auto;
   height: 300px;
-  margin: 15px 15px;
+  margin: 15px;
   max-width: 200px;
   padding: 25px;
   transition: transform 0.5s;
@@ -22,7 +22,6 @@
     transform: scale(1.05);
   }
 }
-
 
 .item-book-cover {
   background: center / cover no-repeat url('resources/book-cover.png');
