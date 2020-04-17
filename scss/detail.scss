@@ -3,24 +3,30 @@ $max-width-mobile: 1024px;
 
 .base-span {
   color: $gray;
-  font-size: 20px;
-  margin-left: 10px;
+  font-size: 24px;
+  margin: auto;
+  padding-left: 10px;
 }
 
 .bold-title {
   font-size: 32px;
   font-weight: bold;
+  grid-area: title;
+  height: 30%;
+  margin: auto;
   width: 100%;
 }
 
 .bold-text {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .subtitle {
-  font-size: 24px;
-  margin-left: 0;
+  grid-area: subtitle;
+  height: 100%;
+  padding-left: 10%;
+  width: 100%;
 }
 
 .item {
@@ -28,6 +34,11 @@ $max-width-mobile: 1024px;
 }
 
 .detail {
+  display: grid;
+  grid-template-areas: "space-left back space-right"
+  "space-left content space-right";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 5fr;
   margin: auto;
   padding: 80px;
   width: fit-content;
@@ -36,15 +47,20 @@ $max-width-mobile: 1024px;
 .container {
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-lighter-5;
-  display: flex;
-  height: 415px;
-  margin-top: 50px;
-  width: 900px;
+  display: grid;
+  grid-area: content;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 1fr 8fr;
+  grid-template-areas: "space-top-cover title" "space-top-cover subtitle" "image-cover description";
+  height: 570px;
+  width: 855px;
 }
 
 .back-arrow {
-  display: contents;
   font-size: 20px;
+  grid-area: back;
+  margin: auto;
+  width: 100%;
 
   &::before {
     content: url('resources/back-arrow-20.png');
@@ -56,29 +72,28 @@ $max-width-mobile: 1024px;
 } 
 
 .container-item {
-  margin: 25px;
+  margin: 15px 30px;
 }
 
 .container-data {
-  flex-grow: 2;
+  grid-area: description;
+  height: 65%;
+  margin: auto;
+  width: 100%;
 }
 
 .book-cover {
-  height: 368px;
+  height: 370px;
   width: 260px;
-}
-
-.border-line {
-  border-bottom: solid $earls-green;
-  padding-bottom: 20px;
 }
 
 .badge {
   position: relative;
+  grid-area: image-cover;
 
   &::after {
     background: center / contain no-repeat url('resources/badge.png');
-    bottom: 280px;
+    bottom: 340px;
     content: '';
     height: $badge-size;
     left: 195px;
@@ -90,19 +105,25 @@ $max-width-mobile: 1024px;
 
 @media (max-width: $max-width-mobile) {
   .detail {
-    display: flex;
-    flex-direction: column-reverse;
+    display: grid;
+    grid-template-areas: "content" "back";
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr 1fr;
+    padding: 20px;
   }
 
   .back-arrow {
-    align-self: center;
-    display: block;
-    margin-top: 20px;
+    padding-top: 20px;
+    height: 100%;
+    width: auto;
   }
 
   .container {
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr 2fr;
+    grid-template-areas: "title" "image-cover" "subtitle" "description";
+
     height: 570px;
     margin: 0;
     width: 340px;
@@ -118,35 +139,49 @@ $max-width-mobile: 1024px;
   }
 
   .badge {
-    margin-top: 35px;
+    margin: auto;
   
     &::after {
-      bottom: 240px;
-      height: calc($badge-size * 30%);
+      bottom: 250px;
+      height: 70px;
       left: 165px;
-      width: calc($badge-size * 30%);
+      width: 70px;
     }
   }
-
-  .bold-title {
-    font-size: 24px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-  }
-
+  
   .bold-text,
   .base-span {
     font-size: 14px;
   }
 
-  .item {
-    margin: 20px 10px;
+  .bold-title {
+    font-size: 24px;
+    height: auto;
+    padding: 15px;
+    width: auto;
   }
 
-  .border-line {
-    padding-bottom: 10px;
+  .subtitle {
+    font-size: 16px;
+    height: auto;
+    padding-left: 0;
+    padding-top: 15px;
+    position: relative;
+    text-align: center;
+
+    &::after {
+      background-color: $earls-green;
+      content: '';
+      height: 4px;
+      left: 20px;
+      position: absolute;
+      top: 45px;
+      width: 300px;
+    }
+  }
+
+  .item {
+    margin: 20px 10px;
   }
 }
 
