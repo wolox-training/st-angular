@@ -1,3 +1,6 @@
+$badge-size: 100px;
+$max-width-mobile: 1024px;
+
 .base-span {
   color: $gray;
   font-size: 20px;
@@ -77,11 +80,73 @@
     background: center / contain no-repeat url('resources/badge.png');
     bottom: 280px;
     content: '';
-    height: 100px;
+    height: $badge-size;
     left: 195px;
     position: absolute;
     transform: rotate(15deg);
-    width: 100px;
+    width: $badge-size;
+  }
+}
+
+@media (max-width: $max-width-mobile) {
+  .detail {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .back-arrow {
+    align-self: center;
+    display: block;
+    margin-top: 20px;
+  }
+
+  .container {
+    align-items: center;
+    flex-direction: column;
+    height: 570px;
+    margin: 0;
+    width: 340px;
+  }
+
+  .container-item {
+    margin: 15px;
+  }
+
+  .book-cover {
+    height: 300px;
+    width: 210px;
+  }
+
+  .badge {
+    margin-top: 35px;
+  
+    &::after {
+      bottom: 240px;
+      height: calc($badge-size * 30%);
+      left: 165px;
+      width: calc($badge-size * 30%);
+    }
+  }
+
+  .bold-title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .bold-text,
+  .base-span {
+    font-size: 14px;
+  }
+
+  .item {
+    margin: 20px 10px;
+  }
+
+  .border-line {
+    padding-bottom: 10px;
   }
 }
 
