@@ -4,8 +4,8 @@ $max-width-mobile: 1024px;
 .base-span {
   color: $gray;
   font-size: 24px;
-  padding-left: 10px;
   margin: auto;
+  padding-left: 10px;
 }
 
 .bold-title {
@@ -34,14 +34,14 @@ $max-width-mobile: 1024px;
 }
 
 .detail {
-  margin: auto;
-  padding: 80px;
-  width: fit-content;
   display: grid;
   grid-template-areas: "space-left back space-right"
   "space-left content space-right";
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 5fr;
+  margin: auto;
+  padding: 80px;
+  width: fit-content;
 }
 
 .container {
@@ -51,7 +51,7 @@ $max-width-mobile: 1024px;
   grid-area: content;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 1fr 8fr;
-  grid-template-areas: "space1 title" "space2 subtitle" "image-cover description";
+  grid-template-areas: "space-top-cover title" "space-top-cover subtitle" "image-cover description";
   height: 570px;
   width: 855px;
 }
@@ -83,7 +83,7 @@ $max-width-mobile: 1024px;
 }
 
 .book-cover {
-  height: 368px;
+  height: 370px;
   width: 260px;
 }
 
@@ -143,9 +143,9 @@ $max-width-mobile: 1024px;
   
     &::after {
       bottom: 250px;
-      height: calc(100px * 0.7);
+      height: 70px;
       left: 165px;
-      width: calc(100px * 0.7);
+      width: 70px;
     }
   }
   
@@ -167,13 +167,13 @@ $max-width-mobile: 1024px;
     padding-left: 0;
     padding-top: 15px;
     position: relative;
-    width: auto;
+    text-align: center;
 
     &::after {
       background-color: $earls-green;
       content: '';
       height: 4px;
-      left: -120px;
+      left: 20px;
       position: absolute;
       top: 45px;
       width: 300px;
