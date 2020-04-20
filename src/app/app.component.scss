@@ -1,0 +1,14 @@
+@import '../styles.scss';
+
+.label-input {
+  text-align: left;
+  width: -webkit-fill-available;
+}
+
+.form-input {
+  background-color: $white;
+  border-radius: 5px;
+  height: 35px;
+  margin: 10px 0;
+  width: -webkit-fill-available;
+}
