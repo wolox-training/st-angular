@@ -1,27 +1,6 @@
-<div class="login-container">
-  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)" [ngClass]="{'login-form': true, 'login-form-sign-up': !isLogin}" >
-    <div formGroupName="user">
+<div class="authentication-container">
+  <div class="authentication-form" >
       <img class="form-logo" src="../assets/logo-wolox.png" alt="logo-wolox"/>
-      <div *ngIf="isLogin else signUp">
-        <label class="label-input" for="email">Email</label>
-        <input class="form-input" [ngClass]="{'form-input-error': checkInput('email')}" id="email" type="text" formControlName="email">
-        <label class="label-input" for="password">Password</label>
-        <input class="form-input" id="password" type="password" formControlName="password">
-      </div>
-      <ng-template #signUp>
-        <label class="label-input" for="nombre">Nombre</label>
-        <input class="form-input" id="nombre" type="text" formControlName="first_name">
-        <label class="label-input" for="apellido">Apellido</label>
-        <input class="form-input" id="apellido" type="text" formControlName="last_name">
-        <label class="label-input" for="email">Email</label>
-        <input class="form-input" [ngClass]="{'form-input-error': checkInput('email')}" id="email" type="text" formControlName="email">
-        <label class="label-input" for="password">Password</label>
-        <input class="form-input" [ngClass]="{'form-input-error': checkInput('password')}" id="password" type="password" formControlName="password">
-        <label class="label-input" for="password_confirmation">Confirmación de Password</label>
-        <input class="form-input" [ngClass]="{'form-input-error': checkInput('password_confirmation')}" id="password_confirmation" type="password" formControlName="password_confirmation">
-      </ng-template>
-      <button class="login-button" type="submit" [disabled]="!authForm.valid">{{label_button_up}}</button>
-      <button class="signup-button" type="button" (click)="onSignUp()">{{label_button_down}}</button>
+      <ng-content></ng-content>
     </div>
-  </form>
 </div>
