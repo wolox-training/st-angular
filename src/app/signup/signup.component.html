@@ -1,5 +1,5 @@
 <app-authentication>
-  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+  <form [formGroup]="authForm">
     <div formGroupName="user">
       <label class="label-input" for="nombre">Nombre</label>
       <input class="form-input" type="text" formControlName="first_name">
@@ -12,7 +12,7 @@
       <label class="label-input" for="password_confirmation">Confirmación de Password</label>
       <input class="form-input" [ngClass]="{'form-input-error': checkInput('password_confirmation')}" type="password" formControlName="password_confirmation">
     </div>
-    <button class="signup-button" type="submit" [disabled]="authForm.invalid">Sign Up</button>
-    <button class="login-button" type="button" >Login</button>
   </form>
+  <app-button (bClick)="onSubmit(authForm.value)" [value]="'Sign Up'" [disabled]="authForm.invalid" [borderLine]="true"></app-button>
+  <app-button [class]="'secondary'" [value]="'Login'"></app-button>
 </app-authentication>

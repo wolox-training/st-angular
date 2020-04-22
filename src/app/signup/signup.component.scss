@@ -18,16 +18,6 @@
 }
 
 .signup-button {
-  background-color: $earls-green;
-  border-radius: 5px;
-  color: $white;
-  cursor: pointer;
-  height: 35px;
-  margin: 10px 0;
-  position: relative;
-  text-align: center;
-  width: -webkit-fill-available;
-
   &::after {
     background-color: $silver-chalice;
     content: '';

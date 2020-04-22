@@ -46,4 +46,8 @@ export class SignupComponent implements OnInit {
     return this.authForm.get(`user.${input}`).invalid && this.authForm.get(`user.${input}`).touched;
   }
 
+  login() {
+    console.log('heeeree');
+  }
+
 }
