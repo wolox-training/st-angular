@@ -1,1 +1,1 @@
-<button [class]="bClass" [type]="bType" [disabled]="bDisabled" (click)="handlerClick($event)">{{ value }}</button>
+<button [class]="bClass" [ngClass]="{ 'border-line': oneLine }" [type]="bType" [disabled]="bDisabled" (click)="handlerClick($event)">{{ label }}</button>

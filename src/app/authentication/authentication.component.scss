@@ -1,4 +1,4 @@
-@import '../../styles.scss';
+@import '_colors';
 
 .authentication-container {
   margin: 100px auto;
@@ -17,16 +17,4 @@
 .form-logo {
   height: 70px;
   width: 210px;
-}
-
-.signup-button {
-  &::after {
-    background-color: $silver-chalice;
-    content: '';
-    height: 2px;
-    left: 0;
-    position: absolute;
-    top: 50px;
-    width: 250px;
-  }
 }

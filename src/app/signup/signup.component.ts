@@ -12,14 +12,14 @@ export class SignupComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.authForm = this.formBuilder.group({
       user: this.formBuilder.group({
-        first_name: '',
-        last_name: '',
+        firstName: '',
+        lastName: '',
         email: [null, Validators.compose([Validators.required, Validators.email])],
         password: [null, Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]+[0-9]+')])],
-        password_confirmation: [''],
+        passwordConfirmation: [''],
         locale: 'en'
       }, {
-        validator: this.checkConfirmation('password', 'password_confirmation')
+        validator: this.checkConfirmation('password', 'passwordConfirmation')
       })
     });
   }
@@ -29,6 +29,7 @@ export class SignupComponent implements OnInit {
 
   onSubmit(value) {
     value.user.locale = 'en'
+    value.user = this.renameKeys(value.user);
     console.log(value);
     this.authForm.reset();
   }
@@ -46,8 +47,14 @@ export class SignupComponent implements OnInit {
     return this.authForm.get(`user.${input}`).invalid && this.authForm.get(`user.${input}`).touched;
   }
 
-  login() {
-    console.log('heeeree');
+  toSnakeCase = value => {
+    return value.replace(/([A-Z])/g, letter => `_${letter.toLowerCase()}`);
+  }
+
+  renameKeys (obj) {
+    let res: Object = {};
+    Object.keys(obj).map(key => res[this.toSnakeCase(key)] = obj[key]);
+    return res;
   }
 
 }

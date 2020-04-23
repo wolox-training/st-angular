@@ -2,17 +2,17 @@
   <form [formGroup]="authForm">
     <div formGroupName="user">
       <label class="label-input" for="nombre">Nombre</label>
-      <input class="form-input" type="text" formControlName="first_name">
+      <input class="form-input" type="text" formControlName="firstName">
       <label class="label-input" for="apellido">Apellido</label>
-      <input class="form-input" type="text" formControlName="last_name">
+      <input class="form-input" type="text" formControlName="lastName">
       <label class="label-input" for="email">Email</label>
       <input class="form-input" [ngClass]="{'form-input-error': checkInput('email')}" type="text" formControlName="email">
       <label class="label-input" for="password">Password</label>
       <input class="form-input" [ngClass]="{'form-input-error': checkInput('password')}" type="password" formControlName="password">
       <label class="label-input" for="password_confirmation">Confirmación de Password</label>
-      <input class="form-input" [ngClass]="{'form-input-error': checkInput('password_confirmation')}" type="password" formControlName="password_confirmation">
+      <input class="form-input" [ngClass]="{'form-input-error': checkInput('passwordConfirmation')}" type="password" formControlName="passwordConfirmation">
     </div>
   </form>
-  <app-button (bClick)="onSubmit(authForm.value)" [value]="'Sign Up'" [disabled]="authForm.invalid" [borderLine]="true"></app-button>
-  <app-button [class]="'secondary'" [value]="'Login'"></app-button>
+  <app-button (bClick)="onSubmit(authForm.value)" [label]="'Sign Up'" [disabled]="authForm.invalid" [oneLine]="true"></app-button>
+  <app-button [class]="'secondary'" [label]="'Login'"></app-button>
 </app-authentication>

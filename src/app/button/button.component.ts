@@ -15,19 +15,17 @@ export class ButtonComponent implements OnInit {
   @Input('disabled')
   bDisabled: boolean = false;
 
-  @Input('value')
-  value: string = 'Button';
+  @Input('label')
+  label: string = 'Button';
 
-  @Input('borderLine')
-  borderLine: boolean = false;
+  @Input('oneLine')
+  oneLine: boolean = false;
 
   @Output() bClick = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit(): void {
-    if (this.borderLine) this.bClass = `${this.bClass} border-line`
-  }
+  ngOnInit(): void { }
 
   handlerClick (event) {
     this.bClick.emit(event);

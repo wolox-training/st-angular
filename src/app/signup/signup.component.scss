@@ -1,4 +1,4 @@
-@import '../../styles.scss';
+@import '_colors';
 
 .label-input {
   text-align: left;
@@ -15,29 +15,4 @@
 
 .form-input-error {
   border: 0.5px solid $pomegranate;
-}
-
-.signup-button {
-  &::after {
-    background-color: $silver-chalice;
-    content: '';
-    height: 2px;
-    left: 0;
-    position: absolute;
-    top: 50px;
-    width: 250px;
-  }
-}
-
-.login-button {
-  background-color: $wild-sand;
-  border: 2px solid $earls-green;
-  border-radius: 5px;
-  box-sizing: border-box;
-  color: $earls-green;
-  cursor: pointer;
-  height: 35px;
-  margin: 20px 0;
-  text-align: center;
-  width: -webkit-fill-available;;
 }
