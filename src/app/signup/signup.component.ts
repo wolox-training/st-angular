@@ -12,8 +12,8 @@ export class SignupComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.authForm = this.formBuilder.group({
       user: this.formBuilder.group({
-        firstName: '',
-        lastName: '',
+        firstName: [null, Validators.required],
+        lastName: [null, Validators.required],
         email: [null, Validators.compose([Validators.required, Validators.email])],
         password: [null, Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]+[0-9]+')])],
         passwordConfirmation: [''],
@@ -27,10 +27,9 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(value) {
-    value.user.locale = 'en'
-    value.user = this.renameKeys(value.user);
-    console.log(value);
+  onSubmit() {
+    this.authForm.value.user = this.renameKeys(this.authForm.value.user);
+    console.log(this.authForm.value);
     this.authForm.reset();
   }
 
