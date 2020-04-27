@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { keysToSnakeCase } from '../helpers/utils/utils';
+import { keysToSnakeCase } from '../../../../helpers/utils/utils';
 
 @Component({
   selector: 'app-signup',
