@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { keysToSnakeCase } from '../helpers/utils/utils';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
   authForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void {
     this.authForm = this.formBuilder.group({
       user: this.formBuilder.group({
         firstName: [null, Validators.required],
@@ -24,11 +27,8 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
-
   onSubmit() {
-    this.authForm.value.user = this.renameKeys(this.authForm.value.user);
+    this.authForm.value.user = keysToSnakeCase(this.authForm.value.user);
     console.log(this.authForm.value);
     this.authForm.reset();
   }
@@ -45,15 +45,4 @@ export class SignupComponent implements OnInit {
   checkInput(input: string) {
     return this.authForm.get(`user.${input}`).invalid && this.authForm.get(`user.${input}`).touched;
   }
-
-  toSnakeCase = value => {
-    return value.replace(/([A-Z])/g, letter => `_${letter.toLowerCase()}`);
-  }
-
-  renameKeys (obj) {
-    let res: Object = {};
-    Object.keys(obj).map(key => res[this.toSnakeCase(key)] = obj[key]);
-    return res;
-  }
-
 }
