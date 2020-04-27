@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http'
+import { UserService } from 'src/app/services/user.service';
 import { keysToSnakeCase } from '@app/helpers/utils/utils';
 
 @Component({
@@ -10,7 +12,7 @@ import { keysToSnakeCase } from '@app/helpers/utils/utils';
 export class SignupComponent implements OnInit {
   authForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, public http: HttpClient, private userService: UserService) { }
 
   ngOnInit(): void {
     this.authForm = this.formBuilder.group({
@@ -29,7 +31,9 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     this.authForm.value.user = keysToSnakeCase(this.authForm.value.user);
-    console.log(this.authForm.value);
+    this.userService
+    .createUser(this.authForm.value.user)
+    .subscribe(data => console.log('sucess!'))
     this.authForm.reset();
   }
 
