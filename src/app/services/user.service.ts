@@ -3,12 +3,13 @@ import { HttpClient, HttpResponse } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { User } from './user';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  apiUrl = 'https://books-training-rails.herokuapp.com/api/v1/users';
+  apiUrl = `${environment.apiUrl}/users`;
 
   constructor(private http: HttpClient) { }
 
