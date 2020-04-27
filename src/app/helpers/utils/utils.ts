@@ -3,7 +3,7 @@ export function toSnakeCase (value: string) {
 };
 
 export function keysToSnakeCase (obj: Object) {
-  let res: Object = {};
+  let res: Object;
   Object.keys(obj).map(key => res[toSnakeCase(key)] = obj[key]);
   return res;
 };
