@@ -33,8 +33,10 @@ export class SignupComponent implements OnInit {
     this.authForm.value.user = keysToSnakeCase(this.authForm.value.user);
     this.userService
     .createUser(this.authForm.value.user)
-    .subscribe(data => console.log('sucess!'))
-    this.authForm.reset();
+    .subscribe(data => {
+      console.log('Sucess!');
+      this.authForm.reset();
+    })
   }
 
   checkConfirmation(password: string, passwordConfirmation: string) {
