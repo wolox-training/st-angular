@@ -13,6 +13,6 @@
       <input class="form-input" [ngClass]="{'form-input-error': checkInput('passwordConfirmation')}" type="password" formControlName="passwordConfirmation">
     </div>
     <app-button type="submit" label="Sign Up" [disabled]="authForm.invalid" [oneLine]="true"></app-button>
-    <app-button class="secondary" label="Login"></app-button>
+    <app-button class="secondary" label="Login" (bClick)="goToLogin()"></app-button>
   </form>
 </app-authentication>
