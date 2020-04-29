@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http'
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from '@app/services/user.service';
 import { keysToSnakeCase } from '@app/helpers/utils/utils';
 
 @Component({

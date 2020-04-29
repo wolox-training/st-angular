@@ -18,7 +18,8 @@
     "paths": {
       "@app/*": ["app/*"],
       "@app/helpers/*": ["app/helpers/*"],
-      "@env/*": ["env/*"]
+      "@app/services/*": ["app/services/*"],
+      "@env/*": ["environments/*"]
     }
   },
   "angularCompilerOptions": {
