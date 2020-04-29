@@ -1,0 +1,18 @@
+<app-authentication>
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="user">
+      <label class="label-input" for="nombre">Nombre</label>
+      <input class="form-input" [ngClass]="{'form-input-error': checkInput('firstName')}" type="text" formControlName="firstName">
+      <label class="label-input" for="apellido">Apellido</label>
+      <input class="form-input" [ngClass]="{'form-input-error': checkInput('lastName')}" type="text" formControlName="lastName">
+      <label class="label-input" for="email">Email</label>
+      <input class="form-input" [ngClass]="{'form-input-error': checkInput('email')}" type="text" formControlName="email">
+      <label class="label-input" for="password">Password</label>
+      <input class="form-input" [ngClass]="{'form-input-error': checkInput('password')}" type="password" formControlName="password">
+      <label class="label-input" for="password_confirmation">Confirmación de Password</label>
+      <input class="form-input" [ngClass]="{'form-input-error': checkInput('passwordConfirmation')}" type="password" formControlName="passwordConfirmation">
+    </div>
+    <app-button type="submit" label="Sign Up" [disabled]="authForm.invalid" [oneLine]="true"></app-button>
+    <app-button class="secondary" label="Login"></app-button>
+  </form>
+</app-authentication>

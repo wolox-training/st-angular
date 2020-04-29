@@ -1,0 +1,39 @@
+@import '_colors';
+
+.primary {
+  background-color: $earls-green;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+  height: 35px;
+  margin: 10px 0;
+  position: relative;
+  text-align: center;
+  width: -webkit-fill-available;
+}
+
+.secondary {
+  background-color: $wild-sand;
+  border: 2px solid $earls-green;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: $earls-green;
+  cursor: pointer;
+  height: 35px;
+  margin: 20px 0;
+  position: relative;
+  text-align: center;
+  width: -webkit-fill-available;;
+}
+
+.border-line {
+  &::after {
+    background-color: $silver-chalice;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 50px;
+    width: 250px;
+  }
+}

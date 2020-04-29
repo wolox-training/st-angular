@@ -1,0 +1,20 @@
+@import '_colors';
+
+.authentication-container {
+  margin: 100px auto;
+  width: fit-content;
+}
+
+.authentication-form {
+  background-color: $wild-sand;
+  border-top: 5px solid $cerulean;
+  height: fit-content;
+  padding: 25px;
+  text-align: center;
+  width: 300px;
+}
+
+.form-logo {
+  height: 70px;
+  width: 210px;
+}
