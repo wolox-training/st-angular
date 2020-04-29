@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
     .subscribe(data => {
       console.log('Sucess!');
       this.authForm.reset();
-      this.goToLogin();
+      this.router.navigate(['/login']);
     })
   }
 
@@ -55,9 +55,5 @@ export class SignupComponent implements OnInit {
 
   checkInput(input: string) {
     return this.authForm.get(`user.${input}`).invalid && this.authForm.get(`user.${input}`).touched;
-  }
-
-  goToLogin () {
-    this.router.navigate(['/login'])
   }
 }
