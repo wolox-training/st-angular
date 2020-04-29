@@ -9,7 +9,7 @@ import { environment } from '@env/environment'
   providedIn: 'root'
 })
 export class UserService {
-  apiUrl = `${environment.apiUrl}/users`;
+  private apiUrl = `${environment.apiUrl}/users`;
 
   constructor(private http: HttpClient) { }
 
@@ -20,10 +20,9 @@ export class UserService {
   }
 
   getUser (userId: number): Observable<User> {
-    return this.http.get(
+    return this.http.get<User>(
       `${this.apiUrl}/${userId}`,
       ).pipe(
-        map((data: User) => data),
         catchError (error => throwError('User not found!'))
       )
   }
