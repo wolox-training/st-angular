@@ -12,7 +12,7 @@ import { keysToSnakeCase } from '@app/helpers/utils/utils';
 export class SignupComponent implements OnInit {
   authForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
     this.authForm = this.formBuilder.group({
