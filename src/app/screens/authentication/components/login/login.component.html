@@ -1,1 +1,10 @@
-<p>login works!</p>
+<app-authentication>
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label class="label-input" for="email">Email</label>
+    <input class="form-input" type="text" formControlName="email">
+    <label class="label-input" for="password">Password</label>
+    <input class="form-input" type="password" formControlName="password">
+    <app-button type="submit" label="Login" [disabled]="loginForm.invalid" [oneLine]="true"></app-button>
+    <app-button class="secondary" label="Sign Up" [routerLink]="['/sign-up']" ></app-button>
+  </form>
+</app-authentication>
