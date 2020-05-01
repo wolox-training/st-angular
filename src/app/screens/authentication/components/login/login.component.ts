@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   onSubmit () {
     this.userService.login(this.loginForm.value)
       .subscribe(resp => {
-        localStorage.setItem('user', resp.body.data);
+        localStorage.setItem('user', JSON.stringify(resp.body.data));
         localStorage.setItem('access-token', resp.headers.get('access-token'));
         localStorage.setItem('client', resp.headers.get('client'));
         localStorage.setItem('uid', resp.headers.get('uid'));
