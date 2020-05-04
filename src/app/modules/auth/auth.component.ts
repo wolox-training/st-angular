@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LocalStorageService } from '@app/services/local-storage.service';
 
 @Component({
   selector: 'app-auth',
@@ -9,12 +8,13 @@ import { LocalStorageService } from '@app/services/local-storage.service';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private router: Router, private store: LocalStorageService) { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   logout () {
-    this.store.clear();
+    localStorage.clear();
     this.router.navigateByUrl('/');
   }
 
