@@ -14,7 +14,6 @@ import { BookListComponent } from './screens/book-list/book-list.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { UnauthModule } from './modules/unauth/unauth.module';
 import { LocalStorageService } from './services/local-storage.service';
-import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,9 +35,7 @@ import { TokenInterceptor } from './token.interceptor';
     AuthModule,
     UnauthModule
   ],
-  providers: [
-    LocalStorageService
-  ],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
