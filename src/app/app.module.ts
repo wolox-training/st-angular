@@ -8,7 +8,12 @@ import { AuthenticationComponent } from './screens/Authentication/authentication
 import { SignupComponent } from './screens/Authentication/components/Signup/signup.component';
 import { LoginComponent } from './screens/Authentication/components/Login/login.component';
 import { ButtonComponent } from './components/Button/button.component';
-import { HomeComponent } from './screens/home/home.component';
+import { AuthComponent } from './modules/auth/auth.component';
+import { UnauthComponent } from './modules/unauth/unauth.component';
+import { BookListComponent } from './screens/book-list/book-list.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthModule } from './modules/auth/auth.module';
+import { UnauthGuard } from './guards/unauth.guard';
 import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
@@ -18,16 +23,19 @@ import { LocalStorageService } from './services/local-storage.service';
     LoginComponent,
     SignupComponent,
     ButtonComponent,
-    HomeComponent
+    AuthComponent,
+    UnauthComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule
   ],
-  providers: [LocalStorageService],
+  providers: [LocalStorageService, AuthGuard, UnauthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

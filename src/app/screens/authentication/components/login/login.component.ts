@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.store.save('access-token', resp.headers.get('access-token'));
         this.store.save('client', resp.headers.get('client'));
         this.store.save('uid', resp.headers.get('uid'));
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/books');
       }); 
   }
 }

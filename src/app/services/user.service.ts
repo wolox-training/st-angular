@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { User } from './user';
 import { environment } from '@env/environment'
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { environment } from '@env/environment'
 export class UserService {
   private apiUrl = `${environment.apiUrl}/users`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private store: LocalStorageService) { }
 
   createUser (user: User): Observable<User> {
     return this.http.post<any>(
@@ -33,5 +34,12 @@ export class UserService {
     ).pipe(
       catchError (error => throwError('Email or password was wrong'))
     )
+  }
+
+  isLoggedIn (): boolean {
+    if (this.store.get('access-token') &&  this.store.get('client') && this.store.get('uid')) {
+      return true;
+    }
+    return false;
   }
 }
