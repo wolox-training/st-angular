@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '@app/services/user.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '@app/services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private store: LocalStorageService
   ) { }
 
   ngOnInit(): void {
@@ -27,10 +29,10 @@ export class LoginComponent implements OnInit {
   onSubmit () {
     this.userService.login(this.loginForm.value)
       .subscribe(resp => {
-        localStorage.setItem('user', JSON.stringify(resp.body.data));
-        localStorage.setItem('access-token', resp.headers.get('access-token'));
-        localStorage.setItem('client', resp.headers.get('client'));
-        localStorage.setItem('uid', resp.headers.get('uid'));
+        this.store.save('user', JSON.stringify(resp.body.data));
+        this.store.save('access-token', resp.headers.get('access-token'));
+        this.store.save('client', resp.headers.get('client'));
+        this.store.save('uid', resp.headers.get('uid'));
         this.router.navigateByUrl('/home');
       }); 
   }
