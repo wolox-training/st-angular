@@ -14,6 +14,7 @@ import { BookListComponent } from './screens/book-list/book-list.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthModule } from './modules/auth/auth.module';
 import { UnauthGuard } from './guards/unauth.guard';
+import { UnauthModule } from './modules/unauth/unauth.module';
 import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
@@ -33,7 +34,8 @@ import { LocalStorageService } from './services/local-storage.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthModule
+    AuthModule,
+    UnauthModule
   ],
   providers: [LocalStorageService, AuthGuard, UnauthGuard],
   bootstrap: [AppComponent]
