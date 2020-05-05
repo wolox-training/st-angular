@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ShoppingCartService } from '@app/services/shopping-cart.service';
 
 @Component({
   selector: 'app-auth',
@@ -7,10 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
+  count = 1;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private shoppingService: ShoppingCartService) { }
 
   ngOnInit(): void {
+    this.shoppingService.shoppingBooks.subscribe(books => this.count = books.length);
   }
 
   logout () {

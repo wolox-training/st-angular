@@ -1,5 +1,11 @@
 <nav class="navbar navbar-nav">
   <a class="logo"></a>
-  <a (click)="logout()"><span class="logout">Logout</span></a>
+  <div class="actions">
+    <a href="" class="shopping-cart">
+      <span class="shopping-cart-image"></span>
+      <span class="badge">{{count}}</span>
+    </a>
+    <a class="logout" (click)="logout()"><span class="logout-text">Logout</span></a>
+  </div>
 </nav>
 <router-outlet></router-outlet>
