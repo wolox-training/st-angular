@@ -1,7 +1,10 @@
-<div class="list-container">
-  <div *ngFor="let book of books"  class="list-item">
-    <a class="item-book-cover"></a>
-    <span class="item-bold-text">{{book.title}}</span>
-    <span class="item-text">{{book.author}}</span>
+<div class="container">
+  <input [(ngModel)]="filter" #ctrl="ngModel" class="filter" type="text" name="filter" >
+  <div class="list-container">
+    <div *ngFor="let book of books | titleFilter:filter"  class="list-item">
+      <a class="item-book-cover"></a>
+      <span class="item-bold-text">{{book.title}}</span>
+      <span class="item-text">{{book.author}}</span>
+    </div>
   </div>
 </div>
