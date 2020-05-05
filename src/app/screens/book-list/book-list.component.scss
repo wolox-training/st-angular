@@ -33,6 +33,7 @@
   margin: 15px;
   max-width: 200px;
   padding: 25px;
+  position: relative;
   transition: transform 0.5s;
   width: 100%;
 
@@ -56,4 +57,13 @@
 .item-text {
   color: $gray;
   padding-top: 5px;
+}
+
+.add-buttom {
+  background: center / cover no-repeat url('~/assets/add-icon.png');
+  bottom: 5px;
+  height: 30px;
+  position: absolute;
+  right: 5px;
+  width: 30px;
 }
