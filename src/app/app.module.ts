@@ -14,6 +14,7 @@ import { BookListComponent } from './screens/book-list/book-list.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { UnauthModule } from './modules/unauth/unauth.module';
 import { LocalStorageService } from './services/local-storage.service';
+import { TitleFilterPipe } from './pipes/title-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LocalStorageService } from './services/local-storage.service';
     ButtonComponent,
     AuthComponent,
     UnauthComponent,
-    BookListComponent
+    BookListComponent,
+    TitleFilterPipe
   ],
   imports: [
     BrowserModule,

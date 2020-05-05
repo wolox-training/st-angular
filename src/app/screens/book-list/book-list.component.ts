@@ -8,6 +8,7 @@ import { BookService } from '@app/services/book.service';
 })
 export class BookListComponent implements OnInit {
   books;
+  filter = '';
 
   constructor(private bookService: BookService) { }
 

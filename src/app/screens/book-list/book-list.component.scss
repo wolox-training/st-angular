@@ -1,12 +1,28 @@
 @import '_colors';
 
+.container {
+  padding: 100px 10px;
+  text-align: center;
+}
+
+.filter {
+  box-sizing: border-box;
+  height: 50px;
+  width: 645px;
+  border-radius: 5px;
+  border: 2px solid $mercury;
+  background: url('~/assets/search.png') no-repeat scroll 98% 50%;
+  padding-right: 45px;
+}
+
 .list-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: auto;
   max-width: 1000PX;
-  padding: 90px 10px;
+  padding-top: 20px;
+  text-align: left;
   width: 100%;
 }
 
