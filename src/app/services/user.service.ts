@@ -29,6 +29,7 @@ export class UserService {
   }
 
   login (loginData: Object): Observable<HttpResponse<any>> {
+    console.log(loginData);
     return this.http.post<any>(
       `${this.apiUrl}/sign_in`, loginData, { observe: 'response' }
     ).pipe(
