@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthComponent } from './auth.component';
 import { Routes, RouterModule } from '@angular/router';
+
+import { AuthComponent } from './auth.component';
 import { BookListComponent } from '@app/screens/book-list/book-list.component';
+import { BookDetailComponent } from '@app/screens/book-detail/book-detail.component';
+
 import { AuthGuard } from '@app/guards/auth.guard';
-import { BookService } from '@app/services/book.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '@app/token.interceptor';
+
+import { BookService } from '@app/services/book.service';
+
 
 const routes: Routes = [
   {
     path: '',
     component: AuthComponent,
     children: [
-      { path: 'books', component: BookListComponent }
+      { path: 'books', component: BookListComponent },
+      { path: 'books/:id', component: BookDetailComponent }
     ]
   }
 ];
