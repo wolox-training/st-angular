@@ -1,0 +1,104 @@
+@import '_colors';
+
+.base-span {
+  color: $gray;
+  font-size: 24px;
+  margin: auto;
+  padding-left: 10px;
+}
+
+.bold-title {
+  font-size: 32px;
+  font-weight: bold;
+  grid-area: title;
+  height: 30%;
+  margin: auto;
+  width: 100%;
+}
+
+.bold-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitle {
+  grid-area: subtitle;
+  height: 100%;
+  padding-left: 10%;
+  width: 100%;
+}
+
+.item {
+  margin: 30px 10px;
+}
+
+.detail {
+  display: grid;
+  grid-template-areas: "space-left back space-right"
+  "space-left content space-right";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 5fr;
+  margin: auto;
+  padding: 80px;
+  width: fit-content;
+}
+
+.container {
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 $black-lighter-5;
+  display: grid;
+  grid-area: content;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 1fr 8fr;
+  grid-template-areas: "space-top-cover title" "space-top-cover subtitle" "image-cover description";
+  height: 570px;
+  width: 855px;
+}
+
+.back-arrow {
+  font-size: 20px;
+  grid-area: back;
+  margin: auto;
+  width: 100%;
+
+  &::before {
+    content: url('~/assets/back-arrow.png');
+    height: 20px;
+    margin-right: 15px;
+    vertical-align: middle;
+    width: 20px;
+  }
+} 
+
+.container-item {
+  grid-area: image-cover;
+  margin: 15px 30px;
+}
+
+.container-data {
+  grid-area: description;
+  height: 65%;
+  margin: auto;
+  width: 100%;
+}
+
+.book-cover {
+  background: center / cover no-repeat url('~/assets/book-cover.png');
+  height: 370px;
+  width: 260px;
+}
+
+.badge {
+  position: relative;
+
+  &::after {
+    background: center / contain no-repeat url('~/assets/badge.png');
+    bottom: 340px;
+    content: '';
+    height: 100px;
+    left: 195px;
+    position: absolute;
+    transform: rotate(15deg);
+    width: 100px;
+  }
+}
