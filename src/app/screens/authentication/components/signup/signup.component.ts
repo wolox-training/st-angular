@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '@app/services/user.service';
 import { keysToSnakeCase } from '@app/helpers/utils/utils';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,11 @@ import { keysToSnakeCase } from '@app/helpers/utils/utils';
 export class SignupComponent implements OnInit {
   authForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.authForm = this.formBuilder.group({
@@ -35,6 +40,7 @@ export class SignupComponent implements OnInit {
     .subscribe(data => {
       console.log('Sucess!');
       this.authForm.reset();
+      this.router.navigate(['/login']);
     })
   }
 
