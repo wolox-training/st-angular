@@ -16,11 +16,12 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if (this.userService.isLoggedIn()) {
+      let [accessToken, client, uid] = this.store.get('access-token', 'client', 'uid');
       request = request.clone({
         setHeaders: {
-          'access-token': this.store.get('access-token'),
-          client: this.store.get('client'),
-          uid: this.store.get('uid')
+          'access-token': accessToken,
+          client: client,
+          uid: uid
         }        
       })
     }

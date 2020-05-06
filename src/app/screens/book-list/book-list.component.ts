@@ -13,8 +13,8 @@ export class BookListComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookService.getBooks()
-      .subscribe(resp => {
-        this.books = resp.page;
+      .subscribe(({page}) => {
+        this.books = page;
       })
   }
 
