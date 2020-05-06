@@ -7,6 +7,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '@app/token.interceptor';
 
 @NgModule({
+  declarations: [BookDetailComponent],
   imports: [
     CommonModule,
     AuthRoutingModule
@@ -19,6 +20,7 @@ import { TokenInterceptor } from '@app/token.interceptor';
       useClass: TokenInterceptor,
       multi: true
     }
-  ]
+  ],
+  exports: [BookDetailComponent]
 })
 export class AuthModule { }

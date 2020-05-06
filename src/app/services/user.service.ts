@@ -38,13 +38,6 @@ export class UserService {
   }
 
   isLoggedIn (): boolean {
-<<<<<<< HEAD
     return this.store.get('access-token', 'client', 'uid').length === 3
-=======
-    if (this.store.get('access-token') &&  this.store.get('client') && this.store.get('uid')) {
-      return true;
-    }
-    return false;
->>>>>>> Add auth and unauth guard, add routing modules
   }
 }

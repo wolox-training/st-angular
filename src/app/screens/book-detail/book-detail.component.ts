@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from '@app/services/book.service';
 import { Book } from '@app/services/book';
+import { BOOK } from './constants';
 
 @Component({
   selector: 'app-book-detail',
@@ -12,15 +13,7 @@ export class BookDetailComponent implements OnInit {
   book: Book;
 
   constructor(private route: ActivatedRoute, private bookService: BookService) {
-    this.book = {
-      id: 0,
-      author: 'Autor del libro',
-      title: 'Titulo del libro',
-      image_url: 'imagen',
-      editor: 'Editorial del libro',
-      year: '2020',
-      genre: 'genero'
-    }
+    this.book = BOOK;
   }
 
   ngOnInit(): void {
