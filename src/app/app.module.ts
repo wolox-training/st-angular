@@ -2,7 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './modules/auth/auth.module';
+import { UnauthModule } from './modules/unauth/unauth.module';
+import { PipesModule } from './modules/pipes/pipes.module';
+
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './screens/Authentication/authentication.component';
 import { SignupComponent } from './screens/Authentication/components/Signup/signup.component';
@@ -11,10 +15,8 @@ import { ButtonComponent } from './components/Button/button.component';
 import { AuthComponent } from './modules/auth/auth.component';
 import { UnauthComponent } from './modules/unauth/unauth.component';
 import { BookListComponent } from './screens/book-list/book-list.component';
-import { AuthModule } from './modules/auth/auth.module';
-import { UnauthModule } from './modules/unauth/unauth.module';
+
 import { LocalStorageService } from './services/local-storage.service';
-import { TitleFilterPipe } from './pipes/title-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,7 @@ import { TitleFilterPipe } from './pipes/title-filter.pipe';
     ButtonComponent,
     AuthComponent,
     UnauthComponent,
-    BookListComponent,
-    TitleFilterPipe
+    BookListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,8 @@ import { TitleFilterPipe } from './pipes/title-filter.pipe';
     FormsModule,
     ReactiveFormsModule,
     AuthModule,
-    UnauthModule
+    UnauthModule,
+    PipesModule
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]
