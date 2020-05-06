@@ -11,6 +11,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '@app/token.interceptor';
 
 import { BookService } from '@app/services/book.service';
+import { ShoppingCartService } from '@app/services/shopping-cart.service';
 
 
 const routes: Routes = [
@@ -37,7 +38,8 @@ const routes: Routes = [
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    ShoppingCartService
   ],
   exports: [BookDetailComponent]
 })

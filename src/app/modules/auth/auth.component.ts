@@ -8,7 +8,7 @@ import { ShoppingCartService } from '@app/services/shopping-cart.service';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  count = 1;
+  count = 0;
 
   constructor(private router: Router, private shoppingService: ShoppingCartService) { }
 
