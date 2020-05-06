@@ -37,6 +37,6 @@ export class UserService {
   }
 
   isLoggedIn (): boolean {
-    return this.store.get('access-token', 'client', 'uid').length !== 0
+    return this.store.get('access-token', 'client', 'uid').length === 3
   }
 }
