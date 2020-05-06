@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpResponse } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { User } from './user';
@@ -25,5 +25,13 @@ export class UserService {
       ).pipe(
         catchError (error => throwError('User not found!'))
       )
+  }
+
+  login (loginData: Object): Observable<HttpResponse<any>> {
+    return this.http.post<any>(
+      `${this.apiUrl}/sign_in`, loginData, { observe: 'response' }
+    ).pipe(
+      catchError (error => throwError('Email or password was wrong'))
+    )
   }
 }
