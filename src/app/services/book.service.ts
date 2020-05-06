@@ -4,15 +4,13 @@ import { Observable, throwError } from 'rxjs';
 import { environment } from '@env/environment';
 import { catchError } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BookService {
   private apiUrl = `${environment.apiUrl}/books`;
 
   constructor(private http: HttpClient) { }
 
-  getBooks (): Observable<any> {
+  getBooks(): Observable<any> {
     return this.http.get<any>(
       this.apiUrl,
       ).pipe(

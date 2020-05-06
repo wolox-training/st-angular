@@ -37,12 +37,7 @@ import { TokenInterceptor } from './token.interceptor';
     UnauthModule
   ],
   providers: [
-    LocalStorageService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
