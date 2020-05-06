@@ -38,7 +38,6 @@ export class SignupComponent implements OnInit {
     this.userService
     .createUser(this.authForm.value.user)
     .subscribe(data => {
-      console.log('Sucess!');
       this.authForm.reset();
       this.router.navigate(['/login']);
     })

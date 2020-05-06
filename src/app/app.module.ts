@@ -11,9 +11,7 @@ import { ButtonComponent } from './components/Button/button.component';
 import { AuthComponent } from './modules/auth/auth.component';
 import { UnauthComponent } from './modules/unauth/unauth.component';
 import { BookListComponent } from './screens/book-list/book-list.component';
-import { AuthGuard } from './guards/auth.guard';
 import { AuthModule } from './modules/auth/auth.module';
-import { UnauthGuard } from './guards/unauth.guard';
 import { UnauthModule } from './modules/unauth/unauth.module';
 import { LocalStorageService } from './services/local-storage.service';
 
@@ -37,7 +35,7 @@ import { LocalStorageService } from './services/local-storage.service';
     AuthModule,
     UnauthModule
   ],
-  providers: [LocalStorageService, AuthGuard, UnauthGuard],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

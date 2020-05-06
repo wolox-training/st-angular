@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { User } from './user';
 import { environment } from '@env/environment'
 import { LocalStorageService } from './local-storage.service';
@@ -37,9 +37,6 @@ export class UserService {
   }
 
   isLoggedIn (): boolean {
-    if (this.store.get('access-token') &&  this.store.get('client') && this.store.get('uid')) {
-      return true;
-    }
-    return false;
+    return this.store.get('access-token', 'client', 'uid').length !== 0
   }
 }

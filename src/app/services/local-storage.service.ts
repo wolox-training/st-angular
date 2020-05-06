@@ -9,8 +9,8 @@ export class LocalStorageService {
     localStorage.setItem(key, data);
   }
 
-  get(key) {
-    return localStorage.getItem(key);
+  get(...keys: string[]): any[] {
+    return keys.map(key => localStorage.getItem(key)).filter(key => key !== null);
   }
 
   clear() {

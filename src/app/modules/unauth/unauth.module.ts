@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UnauthComponent } from './unauth.component';
 import { LoginComponent } from '@app/screens/Authentication/components/Login/login.component';
 import { SignupComponent } from '@app/screens/Authentication/components/Signup/signup.component';
+import { UnauthGuard } from '@app/guards/unauth.guard';
 
 const routes: Routes = [
   {
@@ -17,10 +18,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  providers: [UnauthGuard]
 })
 export class UnauthModule { }
