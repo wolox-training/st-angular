@@ -9,6 +9,7 @@ import { SignupComponent } from './screens/Authentication/components/Signup/sign
 import { LoginComponent } from './screens/Authentication/components/Login/login.component';
 import { ButtonComponent } from './components/Button/button.component';
 import { HomeComponent } from './screens/home/home.component';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HomeComponent } from './screens/home/home.component';
     FormsModule,
     ReactiveFormsModule
   ],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
