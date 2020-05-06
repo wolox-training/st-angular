@@ -25,6 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  declarations: [BookDetailComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
@@ -37,6 +38,7 @@ const routes: Routes = [
       useClass: TokenInterceptor,
       multi: true
     }
-  ]
+  ],
+  exports: [BookDetailComponent]
 })
 export class AuthModule { }

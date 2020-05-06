@@ -1,20 +1,10 @@
 <div class="container">
   <input [(ngModel)]="filterValue" #ctrl="ngModel" class="filter" type="text" name="filter" >
   <div class="list-container">
-<<<<<<< HEAD
-    <div *ngFor="let book of books | filter:filterValue"  class="list-item">
+    <div *ngFor="let book of books | filter:filterValue"  class="list-item" [routerLink]="['/books', book.id]">
       <a class="item-book-cover"></a>
       <span class="item-bold-text">{{book.title}}</span>
       <span class="item-text">{{book.author}}</span>
     </div>
-=======
-    <ng-template ngFor let-book [ngForOf]="books | titleFilter:filter" let-i="index">
-      <div class="list-item" [routerLink]="['/books', book.id]">
-        <a class="item-book-cover"></a>
-        <span class="item-bold-text">{{book.title}}</span>
-        <span class="item-text">{{book.author}}</span>
-      </div>
-    </ng-template>
->>>>>>> Add book details, and service to get book info
   </div>
 </div>
