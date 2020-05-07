@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
 
 import { AuthComponent } from './auth.component';
 import { BookListComponent } from '@app/screens/book-list/book-list.component';
@@ -11,7 +12,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '@app/token.interceptor';
 
 import { BookService } from '@app/services/book.service';
-import { ShoppingCartService } from '@app/services/shopping-cart.service';
+
+import * as shoppingCart from '@app/store/book.reducer'
 
 
 const routes: Routes = [
@@ -29,7 +31,8 @@ const routes: Routes = [
   declarations: [BookDetailComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    StoreModule.forFeature('shopping', shoppingCart.reducer)
   ],
   providers: [
     AuthGuard,
@@ -38,8 +41,7 @@ const routes: Routes = [
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    },
-    ShoppingCartService
+    }
   ],
   exports: [BookDetailComponent]
 })

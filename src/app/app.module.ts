@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './modules/auth/auth.module';
 import { UnauthModule } from './modules/unauth/unauth.module';
 import { PipesModule } from './modules/pipes/pipes.module';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './screens/Authentication/authentication.component';
@@ -37,7 +38,8 @@ import { LocalStorageService } from './services/local-storage.service';
     ReactiveFormsModule,
     AuthModule,
     UnauthModule,
-    PipesModule
+    PipesModule,
+    StoreModule.forRoot({}),
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]

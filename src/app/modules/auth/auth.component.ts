@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShoppingCartService } from '@app/services/shopping-cart.service';
+import { Store, select } from '@ngrx/store';
+import { Book } from '@app/models/book';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -9,11 +11,16 @@ import { ShoppingCartService } from '@app/services/shopping-cart.service';
 })
 export class AuthComponent implements OnInit {
   count = 0;
+  shoppingBooks$: Observable<Book[]>;
 
-  constructor(private router: Router, private shoppingService: ShoppingCartService) { }
+  constructor(private router: Router, private store: Store<{ shopping: Book[] }>) {
+    this.shoppingBooks$ = store.pipe(select('shopping'));
+  }
 
   ngOnInit(): void {
-    this.shoppingService.shoppingBooks.subscribe(books => this.count = books.length);
+    this.store.source.subscribe(resp => {
+      this.count = resp.shopping.length;
+    });
   }
 
   logout () {
