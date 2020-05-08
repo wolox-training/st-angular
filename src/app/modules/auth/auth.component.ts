@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { LocalStorageService } from '@app/services/local-storage.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class AuthComponent implements OnInit {
 
   constructor(private router: Router, private store: LocalStorageService) { }
 

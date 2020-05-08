@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SignupComponent } from './screens/Authentication/components/Signup/signup.component';
-import { LoginComponent } from './screens/Authentication/components/Login/login.component';
-import { HomeComponent } from './screens/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
+import { UnauthGuard } from './guards/unauth.guard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'sign-up', component: SignupComponent },
-  { path: 'home', component: HomeComponent }
+  {
+    path: '',
+    loadChildren: () => import('./modules/unauth/unauth.module').then(resp => resp.UnauthModule),
+    canActivate: [UnauthGuard]
+  },
+  {
+    path: '',
+    loadChildren: () => import('./modules/auth/auth.module').then(resp => resp.AuthModule),
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
