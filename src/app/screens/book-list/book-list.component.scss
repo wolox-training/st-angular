@@ -1,0 +1,43 @@
+@import '_colors';
+
+.list-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: auto;
+  max-width: 1000PX;
+  padding: 90px 10px;
+  width: 100%;
+}
+
+.list-item {
+  box-shadow: 4px 4px 10px 0 $black-lighter-5;
+  flex: 1 0 auto;
+  height: 300px;
+  margin: 15px;
+  max-width: 200px;
+  padding: 25px;
+  transition: transform 0.5s;
+  width: 100%;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.item-book-cover {
+  background: center / cover no-repeat url('~/assets/book-cover.png');
+  height: 200px;
+  width: 150px;
+}
+
+.item-bold-text {
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.item-text {
+  color: $gray;
+  padding-top: 5px;
+}
