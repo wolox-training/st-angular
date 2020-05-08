@@ -45,7 +45,7 @@
 }
 
 .content {
-  margin-top: 70px; 
+  align-items: center;
 }
 
 .shopping-cart {
@@ -71,7 +71,11 @@
   }
 }
 
-.list-item {
+.list-items {
+  width: -webkit-fill-available;
+}
+
+.item {
   border-bottom: 2px solid $silver;
   height: 55px;
   margin-bottom: 30px;
@@ -87,4 +91,21 @@
   position: absolute;
   right: 60px;
   width: 20px;
+}
+
+.empty-cart {
+  background: center / cover no-repeat url('~/assets/empty-cart.png');
+  height: 170px;
+  margin: 90px auto;
+  width: 230px;
+}
+
+.empty-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.empty-description {
+  font-size: 24px;
+  padding-top: 24px;
 }
