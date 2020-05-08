@@ -28,7 +28,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [BookDetailComponent],
+  declarations: [
+    BookDetailComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -43,6 +45,8 @@ const routes: Routes = [
       multi: true
     }
   ],
-  exports: [BookDetailComponent]
+  exports: [
+    BookDetailComponent
+  ]
 })
 export class AuthModule { }

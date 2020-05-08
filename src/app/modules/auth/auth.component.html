@@ -1,7 +1,7 @@
 <nav class="navbar navbar-nav">
   <a class="logo"></a>
   <div class="actions">
-    <a href="" class="shopping-cart">
+    <a class="shopping-cart" (click)="openPopUp()">
       <span class="shopping-cart-image"></span>
       <span class="badge">{{count}}</span>
     </a>
@@ -9,3 +9,11 @@
   </div>
 </nav>
 <router-outlet></router-outlet>
+<app-pop-up popUpName="shopping" title="Tu carrito de compras" [open]="popUp" (closeAction)="closePopUp($event)">
+  <ul>
+    <li *ngFor="let book of shoppingBooks; index as i" class="list-item">
+      <span class="text-item">{{book.title}} - {{book.author}}</span>
+      <a (click)="removeItem(i)" class="remove-item"></a>
+    </li>
+</ul>
+</app-pop-up>

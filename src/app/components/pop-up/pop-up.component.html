@@ -1,0 +1,9 @@
+<div [id]="popUpName" class="overlay" [ngClass]="{open: open}">
+	<div class="popup">
+		<h1 class="popup-title">{{title}}</h1>
+		<a class="close" (click)="close()"></a>
+		<div class="content">
+			<ng-content></ng-content>
+		</div>
+	</div>
+</div>
