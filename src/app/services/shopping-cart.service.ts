@@ -11,8 +11,8 @@ export class ShoppingCartService {
   constructor() {}
 
   addBokk (book: Book) {
-    this.books.value.push(book);
-    this.books.next(this.books.value);
+    const books = [...this.books.value, {...book}];
+    this.books.next(books);
   }
 
   itemscount (): number {

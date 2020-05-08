@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '@app/services/book.service';
 import { ShoppingCartService } from '@app/services/shopping-cart.service';
+import { forkJoin } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-book-list',
@@ -15,9 +17,12 @@ export class BookListComponent implements OnInit {
   constructor(private bookService: BookService, private shoppingService: ShoppingCartService) { }
 
   ngOnInit(): void {
-    this.bookService.getBooks()
-      .subscribe(({page}) => this.books = page)
-      this.shoppingService.shoppingBooks.subscribe(books => this.shoppingBooks = books);
+    forkJoin(
+      this.bookService.getBooks()
+        .pipe(tap(({page}) => this.books = page)),
+      this.shoppingService.shoppingBooks
+        .pipe(tap(books => this.shoppingBooks = books))
+    ).subscribe()
   }
 
   addBookToCart (book) {
