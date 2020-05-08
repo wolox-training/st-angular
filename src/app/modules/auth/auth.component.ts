@@ -16,6 +16,7 @@ export class AuthComponent implements OnInit {
   shoppingBooks$: Observable<Book[]>;
   popUp = false;
   shoppingBooks: [];
+  popUpTitle = 'Tu carrito de compras';
 
   constructor(
     private router: Router,

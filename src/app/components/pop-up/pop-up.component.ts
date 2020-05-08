@@ -11,7 +11,7 @@ export class PopUpComponent implements OnInit {
   @Input() title: string;
   @Input() open: boolean;
 
-  @Output() closeAction = new EventEmitter;
+  @Output() closeAction = new EventEmitter();
 
   constructor() {}
 

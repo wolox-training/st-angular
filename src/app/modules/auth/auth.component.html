@@ -9,11 +9,11 @@
   </div>
 </nav>
 <router-outlet></router-outlet>
-<app-pop-up popUpName="shopping" title="Tu carrito de compras" [open]="popUp" (closeAction)="closePopUp($event)">
+<app-pop-up popUpName="shopping" [title]="popUpTitle" [open]="popUp" (closeAction)="closePopUp($event)">
   <ul>
     <li *ngFor="let book of shoppingBooks; index as i" class="list-item">
-      <span class="text-item">{{book.title}} - {{book.author}}</span>
+      <span class="text-item">{{ book.title }} - {{ book.author }}</span>
       <a (click)="removeItem(i)" class="remove-item"></a>
     </li>
-</ul>
+  </ul>
 </app-pop-up>
