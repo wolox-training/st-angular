@@ -21,4 +21,8 @@ export class BookDetailComponent implements OnInit {
       .subscribe(resp => { this.book = resp })
   }
 
+  starredAuthor(name: string) {
+    return name === 'Piers Anthony';
+  }
+
 }

@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { BookService } from '@app/services/book.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '@app/token.interceptor';
+import { BookDetailComponent } from '@app/screens/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [BookDetailComponent],
