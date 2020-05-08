@@ -9,4 +9,4 @@ import { FilterPipe } from './filter.pipe';
   ],
   exports: [FilterPipe]
 })
-export class PipesModule { }
+export class PipesModule {}

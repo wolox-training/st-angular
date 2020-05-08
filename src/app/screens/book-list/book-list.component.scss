@@ -6,13 +6,13 @@
 }
 
 .filter {
+  background: url('~/assets/search.png') no-repeat scroll 98% 50%;
+  border: 2px solid $mercury;
+  border-radius: 5px;
   box-sizing: border-box;
   height: 50px;
-  width: 645px;
-  border-radius: 5px;
-  border: 2px solid $mercury;
-  background: url('~/assets/search.png') no-repeat scroll 98% 50%;
   padding-right: 45px;
+  width: 645px;
 }
 
 .list-container {
