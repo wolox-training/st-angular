@@ -2,7 +2,7 @@
   <input [(ngModel)]="filterValue" #ctrl="ngModel" class="filter" type="text" name="filter" >
   <div class="list-container">
     <div *ngFor="let book of books | filter:filterValue"  class="list-item">
-      <img class="item-book-cover" [src]="book.image_url" [alt]="book.title" [routerLink]="['/books', book.id]">
+      <img class="item-book-cover" [src]="book.image_url" [alt]="book.title" [routerLink]="['/books', book.id]"/>
       <span class="item-bold-text">{{book.title}}</span>
       <span class="item-text">{{book.author}}</span>
       <a class="add-buttom" (click)="addBookToCart(book)"></a>

@@ -3,8 +3,8 @@
   <div class="container">
     <h2 class="bold-title">{{book.title}}</h2>
     <span class="base-span subtitle">({{book.genre}})</span>
-    <div class="container-item" [ngClass]="{ badge: book.author == 'Chi Koepp' }">
-      <img class="book-cover" [src]="book.image_url" [alt]="book.title" >
+    <div class="container-item" [ngClass]="{ badge: starredAuthor(book.author) }">
+      <img class="book-cover" [src]="book.image_url" [alt]="book.title"/>
     </div>
     <div class="container-item container-data">
       <div class="item">

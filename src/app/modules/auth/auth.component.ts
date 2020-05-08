@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { removeBook } from '@app/store/book.actions';
@@ -47,5 +47,7 @@ export class AuthComponent implements OnInit {
   removeItem(index) {
     this.store.dispatch(removeBook({index}));
   }
+
+  
 
 }
