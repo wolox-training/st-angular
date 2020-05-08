@@ -1,0 +1,35 @@
+@import '_colors';
+
+.navbar {
+  background-color: $white; 
+  border-top: solid 5px $cerulean;
+  box-shadow: 0 4px 10px 0 $black-lighter-5;
+  height: 70px;
+  position: fixed;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: 100%;
+}
+
+.navbar-nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  background: center / cover no-repeat url("../../../assets/logo-wolox.png");
+  height: 70px;
+  width: 210px;
+  margin-left: 40px;
+}
+
+.logout {
+  font-size: 18px;
+  line-height: 20px;
+  margin-right: 20px;
+}
