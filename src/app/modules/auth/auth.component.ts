@@ -16,9 +16,6 @@ export class AuthComponent implements OnInit {
   shoppingBooks$: Observable<Book[]>;
   popUp = false;
   shoppingBooks: [];
-  popUpTitle = 'Tu carrito de compras';
-  emptyTitle = 'EL CARRITO ESTA VACIO';
-  emptyDescription = 'Parece que no tienes items en el carrito de compra.';
 
   constructor(
     private router: Router,

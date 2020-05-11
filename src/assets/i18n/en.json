@@ -1,0 +1,22 @@
+{
+  "login": {
+    "email": "Email",
+    "password": "Password",
+    "login_button": "Login",
+    "signup_button": "Sign Up"
+  },
+  "navbar": {
+    "logout": "Logout"
+  },
+  "detail": {
+    "back": "Back",
+    "author": "Book author",
+    "publisher": "Publisher",
+    "year": "Publication year"
+  },
+  "shopping": {
+    "title": "Shopping Cart",
+    "empty_title":"SHOPPING CART IS EMPTY",
+    "empty_description": "You don't have items in the cart"
+  }
+}
