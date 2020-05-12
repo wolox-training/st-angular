@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '@app/services/book.service';
 import { ShoppingCartService } from '@app/services/shopping-cart.service';
-import { forkJoin } from 'rxjs';
+import { forkJoin, combineLatest } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Component({
@@ -17,12 +17,13 @@ export class BookListComponent implements OnInit {
   constructor(private bookService: BookService, private shoppingService: ShoppingCartService) { }
 
   ngOnInit(): void {
-    forkJoin(
-      this.bookService.getBooks()
-        .pipe(tap(({page}) => this.books = page)),
+    combineLatest(
+      this.bookService.getBooks(),
       this.shoppingService.shoppingBooks
-        .pipe(tap(books => this.shoppingBooks = books))
-    ).subscribe()
+    ).subscribe(([{page}, books]) => {
+      this.books = page;
+      this.shoppingBooks = books
+    });
   }
 
   addBookToCart (book) {
