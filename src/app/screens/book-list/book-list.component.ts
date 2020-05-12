@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BookService } from '@app/services/book.service';
 
 @Component({
@@ -8,14 +8,13 @@ import { BookService } from '@app/services/book.service';
 })
 export class BookListComponent implements OnInit {
   books;
+  filterValue = '';
 
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
     this.bookService.getBooks()
-      .subscribe(({page}) => {
-        this.books = page;
-      })
+      .subscribe(({page}) => this.books = page)
   }
 
 }
