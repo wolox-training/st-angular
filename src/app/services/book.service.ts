@@ -17,4 +17,12 @@ export class BookService {
         catchError (error => throwError('Error with server'))
       )
   }
+
+  getBook (id: string): Observable<any> {
+    return this.http.get<any>(
+      `${this.apiUrl}/${id}`
+    ).pipe(
+      catchError (error => throwError('Book not foun'))
+    )
+  }
 }
