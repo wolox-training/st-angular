@@ -21,8 +21,7 @@
       "@app/services/*": ["app/services/*"],
       "@env/*": ["environments/*"]
     },
-    "esModuleInterop": true,
-    "emitDecoratorMetadata": true
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
