@@ -3,8 +3,8 @@ import { HttpClient, HttpResponse } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from '@app/models/user';
-import { environment } from '@env/environment'
-import { LocalStorageService } from './local-storage.service';
+import { environment } from '@env/environment';
+import { LocalStorageService } from '../local-storage.service';
 
 @Injectable({
   providedIn: 'root'

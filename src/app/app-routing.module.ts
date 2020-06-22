@@ -4,7 +4,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { UnauthGuard } from './guards/unauth.guard';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: '',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '@app/services/user.service';
+import { UserService } from '@app/services/user/user.service';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '@app/services/local-storage.service';
 
@@ -34,6 +34,6 @@ export class LoginComponent implements OnInit {
         this.store.save('client', resp.headers.get('client'));
         this.store.save('uid', resp.headers.get('uid'));
         this.router.navigateByUrl('/books');
-      }); 
+      });
   }
 }

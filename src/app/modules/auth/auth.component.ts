@@ -19,7 +19,7 @@ export class AuthComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private localStorageService: LocalStorageService, 
+    private localStorageService: LocalStorageService,
     private store: Store<{ shopping: Book[] }>) {
     this.shoppingBooks$ = store.pipe(select('shopping'));
   }
@@ -47,7 +47,5 @@ export class AuthComponent implements OnInit {
   removeItem(index) {
     this.store.dispatch(removeBook({index}));
   }
-
-  
 
 }
