@@ -25,7 +25,8 @@ import { TranslateModule } from '@ngx-translate/core';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    ShoppingCartService
   ],
   exports: [BookDetailComponent]
 })

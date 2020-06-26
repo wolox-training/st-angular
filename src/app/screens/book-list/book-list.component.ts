@@ -20,8 +20,17 @@ export class BookListComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.bookService.getBooks()
-      .subscribe(({page}) => this.books = page)
+    combineLatest(
+      this.bookService.getBooks(),
+      this.shoppingService.shoppingBooks
+    ).subscribe(([{page}, books]) => {
+      this.books = page;
+      this.shoppingBooks = books
+    });
+  }
+
+  addBookToCart (book) {
+    this.shoppingService.addBokk(book);
   }
 
   addBookToCart (book) {

@@ -11,6 +11,7 @@ import { LocalStorageService } from '@app/services/local-storage.service';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
+
 export class AuthComponent implements OnInit {
   count = 0;
   shoppingBooks$: Observable<Book[]>;
@@ -47,7 +48,4 @@ export class AuthComponent implements OnInit {
   removeItem(index) {
     this.store.dispatch(removeBook({index}));
   }
-
-  
-
 }
