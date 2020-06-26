@@ -8,13 +8,15 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '@app/token.interceptor';
 import { BookDetailComponent } from '@app/screens/book-detail/book-detail.component';
 import * as shoppingCart from '@app/store/book.reducer'
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [BookDetailComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
-    StoreModule.forFeature('shopping', shoppingCart.reducer)
+    StoreModule.forFeature('shopping', shoppingCart.reducer),
+    TranslateModule
   ],
   providers: [
     AuthGuard,

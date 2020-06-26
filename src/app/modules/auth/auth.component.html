@@ -5,15 +5,20 @@
       <span class="shopping-cart-image"></span>
       <span class="badge">{{count}}</span>
     </a>
-    <a class="logout" (click)="logout()"><span class="logout-text">Logout</span></a>
+    <a class="logout" (click)="logout()"><span class="logout-text">{{ 'navbar.logout' | translate }}</span></a>
   </div>
 </nav>
 <router-outlet></router-outlet>
-<app-pop-up popUpName="shopping" [title]="popUpTitle" [open]="popUp" (closeAction)="closePopUp($event)">
-  <ul>
-    <li *ngFor="let book of shoppingBooks; index as i" class="list-item">
+<app-pop-up popUpName="shopping" title="{{ 'shopping.title' | translate }}" [open]="popUp" (closeAction)="closePopUp($event)">
+  <ul class="list-items" *ngIf="shoppingBooks.length > 0;else emptyStore">
+    <li *ngFor="let book of shoppingBooks; index as i" class="item">
       <span class="text-item">{{ book.title }} - {{ book.author }}</span>
       <a (click)="removeItem(i)" class="remove-item"></a>
     </li>
   </ul>
+  <ng-template #emptyStore>
+    <span class="empty-cart"></span>
+    <span class="empty-title">{{ 'shopping.empty_title' | translate }}</span>
+    <span class="empty-description">{{'shopping.empty_description' | translate}}</span>
+  </ng-template>
 </app-pop-up>

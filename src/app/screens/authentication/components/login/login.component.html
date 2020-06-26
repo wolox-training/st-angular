@@ -1,10 +1,10 @@
 <app-authentication>
   <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label class="label-input" for="email">Email</label>
+    <label class="label-input" for="email">{{ 'login.email' | translate }}</label>
     <input class="form-input" type="text" formControlName="email">
-    <label class="label-input" for="password">Password</label>
+    <label class="label-input" for="password">{{ 'login.password' | translate }}</label>
     <input class="form-input" type="password" formControlName="password">
-    <app-button type="submit" label="Login" [disabled]="loginForm.invalid" [oneLine]="true"></app-button>
-    <app-button class="secondary" label="Sign Up" [routerLink]="['/sign-up']" ></app-button>
+    <app-button type="submit" label="{{ 'login.login_button' | translate }}" [disabled]="loginForm.invalid" [oneLine]="true"></app-button>
+    <app-button class="secondary" label="{{ 'login.signup_button' | translate }}" [routerLink]="['/sign-up']" ></app-button>
   </form>
 </app-authentication>
