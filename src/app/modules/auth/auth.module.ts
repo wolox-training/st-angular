@@ -6,6 +6,7 @@ import { BookService } from '@app/services/book.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '@app/token.interceptor';
 import { BookDetailComponent } from '@app/screens/book-detail/book-detail.component';
+import { ShoppingCartService } from '@app/services/shopping-cart.service';
 
 @NgModule({
   declarations: [BookDetailComponent],
@@ -20,7 +21,8 @@ import { BookDetailComponent } from '@app/screens/book-detail/book-detail.compon
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    ShoppingCartService
   ],
   exports: [BookDetailComponent]
 })
