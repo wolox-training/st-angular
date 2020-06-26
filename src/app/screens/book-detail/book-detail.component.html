@@ -1,22 +1,22 @@
-<div class="detail">
-  <a class="back-arrow" [routerLink]="['/books']" >Atrás</a>
+<body class="detail">
+  <a class="back-arrow" [routerLink]="['/books']" >{{ 'detail.back' | translate }}</a>
   <div class="container">
     <h2 class="bold-title">{{book.title}}</h2>
     <span class="base-span subtitle">({{book.genre}})</span>
     <div class="container-item" [ngClass]="{ badge: starredAuthor(book.author) }">
-      <a class="book-cover" alt="book_cover"></a>
+      <img class="book-cover" [src]="book.image_url" [alt]="book.title"/>
     </div>
     <div class="container-item container-data">
       <div class="item">
-        <span class="bold-text">Autor del libro:</span>
+        <span class="bold-text">{{ 'detail.author' | translate }}:</span>
         <span class="base-span">{{book.author}}</span>
       </div>
       <div class="item">
-        <span class="bold-text">Editorial:</span>
+        <span class="bold-text">{{ 'detail.publisher' | translate }}:</span>
         <span class="base-span">{{book.editor}}</span>
       </div>
       <div class="item">
-        <span class="bold-text">Año de publicación:</span>
+        <span class="bold-text">{{ 'detail.year' | translate }}:</span>
         <span class="base-span">{{book.year}}</span>
       </div>
     </div>

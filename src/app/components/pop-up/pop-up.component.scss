@@ -1,0 +1,53 @@
+@import '_colors';
+
+.overlay {
+  background-color: $black-lighter-5;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 500ms;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup {
+  background-color: $white;
+  border-radius: 5px;
+  height: 65%;
+  margin: 150px auto;
+  padding: 20px;
+  position: relative;
+  transition: all 5s ease-in-out;
+  width: 75%;
+}
+
+.popup-title {
+  font-size: 36px;
+}
+
+.close {
+  background: center / cover no-repeat url('~/assets/close-icon.png');
+  height: 24px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 24px;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fill-available;
+  max-height: 90%;
+  overflow: auto;
+  padding: 30px;
+}

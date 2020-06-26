@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '@app/services/book.service';
-import { ShoppingCartService } from '@app/services/shopping-cart.service';
-import { forkJoin, combineLatest } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { addBook } from '@app/store/book.actions';
+import { Store, select } from '@ngrx/store';
+import { Book } from '@app/models/book';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-book-list',
@@ -12,9 +13,11 @@ import { tap } from 'rxjs/operators';
 export class BookListComponent implements OnInit {
   books;
   filterValue = '';
-  shoppingBooks;
+  shoppingBooks$: Observable<Book[]>;
 
-  constructor(private bookService: BookService, private shoppingService: ShoppingCartService) { }
+  constructor(private bookService: BookService, private store: Store<{ shopping: Book[] }>) {
+      this.shoppingBooks$ = store.pipe(select('shopping'));
+    }
 
   ngOnInit(): void {
     combineLatest(
@@ -28,6 +31,10 @@ export class BookListComponent implements OnInit {
 
   addBookToCart (book) {
     this.shoppingService.addBokk(book);
+  }
+
+  addBookToCart (book) {
+    this.store.dispatch(addBook({book}));
   }
 
 }
