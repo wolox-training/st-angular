@@ -1,0 +1,22 @@
+{
+  "login": {
+    "email": "Correo",
+    "password": "Contraseña",
+    "login_button": "Iniciar Sesión",
+    "signup_button": "Registrarse"
+  },
+  "navbar": {
+    "logout": "Cerrar Sesión"
+  },
+  "detail": {
+    "back": "Atrás",
+    "author": "Autor del libro",
+    "publisher": "Editorial",
+    "year": "Año de publicación"
+  },
+  "shopping": {
+    "title": "Tu carrito de compras",
+    "empty_title":"EL CARRITO ESTA VACIO",
+    "empty_description": "Parece que no tienes items en el carrito de compra."
+  }
+}
