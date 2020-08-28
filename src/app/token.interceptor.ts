@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from './services/local-storage.service';
-import { UserService } from './services/user.service';
+import { UserService } from './services/user/user.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -22,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
           'access-token': accessToken,
           client: client,
           uid: uid
-        }        
+        }
       })
     }
     return next.handle(request)

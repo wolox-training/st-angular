@@ -1,4 +1,4 @@
-export function toSnakeCase (value: string) {
+export function toSnakeCase (value: string): string {
   return value.replace(/([A-Z])/g, letter => `_${letter.toLowerCase()}`);
 };
 

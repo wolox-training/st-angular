@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '@app/services/user.service';
+import { UserService } from '@app/services/user/user.service';
 import { keysToSnakeCase } from '@app/helpers/utils/utils';
 import { Router } from '@angular/router';
 
@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
     .subscribe(data => {
       this.authForm.reset();
       this.router.navigate(['/login']);
-    })
+    });
   }
 
   checkConfirmation(password: string, passwordConfirmation: string) {
@@ -48,8 +48,8 @@ export class SignupComponent implements OnInit {
       const pass = formGroup.get(password);
       const confirmPass = formGroup.get(passwordConfirmation);
 
-      return pass.value !== confirmPass.value && confirmPass.setErrors({ notSame: true })
-    }
+      return pass.value !== confirmPass.value && confirmPass.setErrors({ notSame: true });
+    };
   }
 
   checkInput(input: string) {

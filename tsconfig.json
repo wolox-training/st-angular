@@ -20,7 +20,9 @@
       "@app/helpers/*": ["app/helpers/*"],
       "@app/services/*": ["app/services/*"],
       "@env/*": ["environments/*"]
-    }
+    },
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
